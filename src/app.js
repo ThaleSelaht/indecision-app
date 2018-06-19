@@ -31,8 +31,9 @@ const formRender = () => {
     <p>{app.options.length}</p>
     <button onClick={removeAll}>Remove all</button>
     <ol>
-      <li>Option 1</li>  
-      <li>Option 2</li>
+      {
+        app.options.map((option) => <li key={option}>{option}</li>)
+      }
     </ol>  
     <form onSubmit={onFormSubmit}>
       <input type="text" name="option"/>
