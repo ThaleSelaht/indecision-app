@@ -27,4 +27,12 @@ if(fullName) {
   console.log(firstName);
 }
 
-console.log(firstName);
+const getFirstName = (fullName) => {
+  if(fullName) {
+    firstName = fullName.split(' ')[0];
+    return firstName;
+  }
+};
+
+const getFirstName2 = (fullName) => (fullName) ? firstName = firstName.split(' ')[0] : null;
+console.log(getFirstName2(fullName));
