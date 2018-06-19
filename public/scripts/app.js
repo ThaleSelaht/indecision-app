@@ -1,25 +1,50 @@
 'use strict';
 
-// const square = function (x) { 
-//   return x*x;
-// };
+// arguments object - no longer bond with arrow functions
 
-// // const squareArrow = (x) => { 
-// //   return x*x;
-// // };
+var add = function add(a, b) {
+  console.log(arguments);
+  return a + b;
+};
 
-// const squareArrow = (x) => x*x;
-// console.log(square(8));
-// console.log(squareArrow(6));
+//  const addArrow = (a, b) => {
+//   console.log(arguments);  
+//   return a + b;
+// }
+//  //console.log(addArrow(55, 1));
+//  // Will print a reference error
 
-var getFirstName = function getFirstName(fullName) {
-  if (fullName) {
-    return fullName.split(' ')[0];
+// this keyword - no longer bond
+
+var user = {
+  name: 'Thales',
+  cities: ['Cubatão', 'Santos', 'São Paulo'],
+  printPlacesLived: function printPlacesLived() {
+    var _this = this;
+
+    return this.cities.map(function (city) {
+      return _this.name + ' has lived in ' + city;
+    });
+    return cityMessages;
   }
 };
 
-var getFirstName2 = function getFirstName2(fullName) {
-  return fullName ? fullName.split(' ')[0] : null;
+console.log(user.printPlacesLived());
+
+//Chalenge Area
+
+var multiplier = {
+  numbers: [],
+  multiplyBy: 0,
+  multiply: function multiply(arr, mult) {
+    var _this2 = this;
+
+    this.numbers = arr;
+    this.multiplyBy = mult;
+    return this.numbers.map(function (number) {
+      return number * _this2.multiplyBy;
+    });
+  }
 };
 
-console.log(getFirstName('Thales Costa'));
+console.log(multiplier.multiply([1, 2, 3], 2));
