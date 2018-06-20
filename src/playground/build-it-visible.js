@@ -1,7 +1,7 @@
 
 const appRoot = document.getElementById('app');
 
-let visibilityToggler = true;
+let visibilityToggler = false;
 const toggleVisibility = () => {
   visibilityToggler = !visibilityToggler;
   renderToggler();
@@ -12,8 +12,10 @@ const renderToggler = () => {
   const app = (
     <div>
       <h1>Visibility Toggle</h1>
-      <button onClick={toggleVisibility}>{ (visibilityToggler) ? "Show details" : "Hide details"} </button>
-      <h2 hidden={visibilityToggler}>I'm hidden by default</h2>
+      <button onClick={toggleVisibility}>{ (visibilityToggler) ? "Hide details" : "Show details"} </button>
+      { (visibilityToggler) && (
+        <div><h2>I'm hidden by default</h2></div>
+      )}      
     </div>
   );
   
