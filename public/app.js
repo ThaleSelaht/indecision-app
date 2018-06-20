@@ -4,8 +4,6 @@ var appRoot = document.getElementById('app');
 
 var visibilityToggler = true;
 var toggleVisibility = function toggleVisibility() {
-  console.log(visibilityToggler);
-
   visibilityToggler = !visibilityToggler;
   renderToggler();
   return visibilityToggler;
