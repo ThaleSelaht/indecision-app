@@ -40,11 +40,7 @@ class Options extends React.Component {
     return (
       <div>        
         {
-          this.props.options.map((option) => {
-            return (
-              <Option key={option} value={option}/>          
-            );
-          })
+          this.props.options.map((option) => <Option key={option} optionText={option}/>)
         }
       </div>      
     );
@@ -52,10 +48,9 @@ class Options extends React.Component {
 };
 
 class Option extends React.Component {
-  render() {
-    // console.log(this.props.value);    
+  render() {  
     return (
-      <li>{this.props.value}</li>
+      <li>{this.props.optionText}</li>
     );
   }
  
@@ -68,13 +63,4 @@ class AddOptions extends React.Component {
   }
 }
 
-const jsx = (
-  <div>
-    <h1>Title</h1>
-    <Header />
-    <Action />
-    <Options />
-    <AddOptions /> 
-  </div>
-);
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));

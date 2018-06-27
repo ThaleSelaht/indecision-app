@@ -118,7 +118,7 @@ var Options = function (_React$Component4) {
         'div',
         null,
         this.props.options.map(function (option) {
-          return React.createElement(Option, { key: option, value: option });
+          return React.createElement(Option, { key: option, optionText: option });
         })
       );
     }
@@ -141,11 +141,10 @@ var Option = function (_React$Component5) {
   _createClass(Option, [{
     key: 'render',
     value: function render() {
-      // console.log(this.props.value);    
       return React.createElement(
         'li',
         null,
-        this.props.value
+        this.props.optionText
       );
     }
   }]);
@@ -176,17 +175,4 @@ var AddOptions = function (_React$Component6) {
   return AddOptions;
 }(React.Component);
 
-var jsx = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    'Title'
-  ),
-  React.createElement(Header, null),
-  React.createElement(Action, null),
-  React.createElement(Options, null),
-  React.createElement(AddOptions, null)
-);
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
