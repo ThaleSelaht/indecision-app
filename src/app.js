@@ -26,7 +26,7 @@ class Header extends React.Component {
 };
 
 class Action extends React.Component {
-  handlePick(){
+  handlePick(){    
     alert('handlePick');
   }
   render() {
@@ -39,8 +39,13 @@ class Action extends React.Component {
 };
 
 class Options extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleRemoveAll = this.handleRemoveAll.bind(this);
+  }
   handleRemoveAll() {
-    alert('handleRemoveAll');
+    console.log(this.props.options); 
+    //alert('handleRemoveAll');
   }
   render() {
     return (
