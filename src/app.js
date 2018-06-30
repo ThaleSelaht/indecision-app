@@ -41,6 +41,7 @@ class Action extends React.Component {
 class Options extends React.Component {
   constructor(props) {
     super(props);
+    //Binding the this pointer to the right context
     this.handleRemoveAll = this.handleRemoveAll.bind(this);
   }
   handleRemoveAll() {
