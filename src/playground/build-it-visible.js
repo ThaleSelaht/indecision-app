@@ -1,5 +1,33 @@
+class VisibilityToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
+    this.state = {
+      visibility: false
+    }
+  }
+  handleToggleVisibility() {
+    this.setState((prevState) => {
+      prevState.visibility = !prevState.visibility;
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h1>Visibility Toggler</h1>
+        <button onClick={this.handleToggleVisibility}>Show Details</button>
+        {
+          (this.state.visibility) && (
+            <h2>I'm hidden by default</h2>
+          )
+        }
+      </div>
+    );
+  }
+};
 
-const appRoot = document.getElementById('app');
+ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
+/* const appRoot = document.getElementById('app');
 
 let visibilityToggler = false;
 const toggleVisibility = () => {
@@ -22,4 +50,4 @@ const renderToggler = () => {
   ReactDOM.render(app, appRoot);
 }
 
-renderToggler();
+renderToggler(); */
