@@ -7,15 +7,15 @@ class VisibilityToggle extends React.Component {
     }
   }
   handleToggleVisibility() {
-    this.setState((prevState) => {
-      prevState.visibility = !prevState.visibility;
-    });
+    this.setState((prevState) => ({visibility: !prevState.visibility}));
   }
   render() {
     return (
       <div>
         <h1>Visibility Toggler</h1>
-        <button onClick={this.handleToggleVisibility}>Show Details</button>
+        <button onClick={this.handleToggleVisibility}>
+        {(this.state.visibility) ? 'Hide Details' : 'Show Details'}
+        </button>
         {
           (this.state.visibility) && (
             <h2>I'm hidden by default</h2>
