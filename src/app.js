@@ -66,8 +66,7 @@ class Option extends React.Component {
       <li>{this.props.optionText}</li>
 
     );
-  }
- 
+  } 
 }
 
 class AddOptions extends React.Component {
